@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace MySQL_CRUD
 {
-    public partial class Student : Form
+    public partial class FormStudent : Form
     {
-        public Student()
+        public FormStudent()
         {
             InitializeComponent();
         }
+
     }
 }
