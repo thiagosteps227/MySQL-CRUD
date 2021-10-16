@@ -29,13 +29,16 @@ namespace MySQL_CRUD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentInfo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentInfo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnNew = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +46,6 @@ namespace MySQL_CRUD
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -122,8 +122,46 @@ namespace MySQL_CRUD
             this.dataGridView1.Size = new System.Drawing.Size(668, 282);
             this.dataGridView1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(665, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(306, 44);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(345, 31);
+            this.txtSearch.TabIndex = 2;
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNew.Location = new System.Drawing.Point(44, 33);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(81, 42);
+            this.btnNew.TabIndex = 1;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "ID";
             this.Column1.HeaderText = "#";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
@@ -131,6 +169,7 @@ namespace MySQL_CRUD
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "Name";
             this.Column2.HeaderText = "Name";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
@@ -138,6 +177,7 @@ namespace MySQL_CRUD
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Reg";
             this.Column3.HeaderText = "Reg.";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
@@ -145,6 +185,7 @@ namespace MySQL_CRUD
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "Class";
             this.Column4.HeaderText = "Class";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
@@ -152,6 +193,7 @@ namespace MySQL_CRUD
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "Section";
             this.Column5.HeaderText = "Section";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
@@ -190,43 +232,6 @@ namespace MySQL_CRUD
             this.Column7.ReadOnly = true;
             this.Column7.Text = "Delete";
             this.Column7.UseColumnTextForButtonValue = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(665, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(306, 44);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(345, 31);
-            this.txtSearch.TabIndex = 2;
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnNew.FlatAppearance.BorderSize = 0;
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNew.Location = new System.Drawing.Point(44, 33);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(81, 42);
-            this.btnNew.TabIndex = 1;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // FormStudentInfo
             // 
